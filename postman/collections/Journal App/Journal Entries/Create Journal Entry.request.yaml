@@ -1,0 +1,34 @@
+$kind: http-request
+name: Create Journal Entry
+description: |-
+  Creates a new journal entry for the authenticated user.
+
+  **Request Body:**
+  - `title` (string, required) – Title of the journal entry
+  - `content` (string, optional) – Body/content of the entry
+
+  **Returns:** The created JournalEntry object with status 201.
+
+  **Note:** If sentiment analysis is enabled for the user, the `sentiment` field will be automatically populated. If the sentiment service is unavailable, returns 400 with `"Sentiment Analysis is not enabled"`.
+method: POST
+url: '{{baseUrl}}/journal'
+order: 2000
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: |-
+    {
+      "title": "My first journal entry",
+      "content": "Today was a great day. I learned a lot about Spring Boot."
+    }
+scripts:
+  - type: afterResponse
+    language: text/javascript
+    code: |-
+      if (pm.response.code === 201) {
+          var jsonData = pm.response.json();
+          pm.environment.set("entryId", jsonData.id);
+          console.log("Entry ID saved: " + jsonData.id);
+      }

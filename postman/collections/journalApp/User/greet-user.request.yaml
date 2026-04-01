@@ -1,0 +1,11 @@
+$kind: http-request
+name: Greet User with Weather
+description: 'Get a personalized greeting with weather information for the specified city. Path variable: city (e.g., Mumbai, London).'
+method: GET
+url: '{{baseUrl}}/user/greetings/{{city}}'
+order: 3000
+auth:
+  type: bearer
+  credentials:
+    - key: token
+      value: '{{jwt}}'

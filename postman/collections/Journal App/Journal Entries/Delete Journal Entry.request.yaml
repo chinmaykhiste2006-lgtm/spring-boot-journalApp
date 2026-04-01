@@ -1,0 +1,14 @@
+$kind: http-request
+name: Delete Journal Entry
+description: |-
+  Deletes a journal entry by its ID.
+
+  The entry must exist in the database. Also removes the entry reference from the user's journal entries list.
+
+  **Path Variable:**
+  - `myId` – The MongoDB ObjectId of the journal entry (use `{{entryId}}` from environment)
+
+  **Returns:** Status 204 (No Content) on success, or 404 if not found.
+method: DELETE
+url: '{{baseUrl}}/journal/id/{{entryId}}'
+order: 5000

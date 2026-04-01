@@ -1,0 +1,14 @@
+$kind: http-request
+name: Get Starred Entries
+description: |-
+  Retrieves the list of starred journal entry IDs for the authenticated user.
+
+  **Returns:** Array of journal entry ID strings (MongoDB ObjectIds) with status 200.
+
+  Example response:
+  ```json
+  ["64f1a2b3c4d5e6f7a8b9c0d1", "64f1a2b3c4d5e6f7a8b9c0d2"]
+  ```
+method: GET
+url: '{{baseUrl}}/star'
+order: 1000

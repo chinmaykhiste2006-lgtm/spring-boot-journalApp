@@ -1,0 +1,6 @@
+$kind: collection
+name: Journal Entries
+description: |-
+  CRUD operations for journal entries. All endpoints require JWT authentication.
+
+  Journal entries belong to the authenticated user. Each entry has a title, content, date, and an optional sentiment field (set automatically if sentiment analysis is enabled).

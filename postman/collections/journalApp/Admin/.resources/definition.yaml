@@ -1,0 +1,4 @@
+$kind: collection
+name: Admin
+description: 'Admin-only endpoints. All requests require a valid JWT Bearer token with ROLE_ADMIN.'
+order: 4000

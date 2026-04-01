@@ -1,0 +1,11 @@
+$kind: http-request
+name: Add Starred Entry
+description: 'Star a journal entry by its ID for the authenticated user.'
+method: POST
+url: '{{baseUrl}}/star/add/id/{{entryId}}'
+order: 2000
+auth:
+  type: bearer
+  credentials:
+    - key: token
+      value: '{{jwt}}'

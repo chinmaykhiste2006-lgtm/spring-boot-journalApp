@@ -1,0 +1,6 @@
+$kind: http-request
+name: Greetings
+description: 'Get a personalized greeting with current weather information for Pandharpur.'
+method: GET
+url: '{{baseUrl}}/public/greetings'
+order: 4000

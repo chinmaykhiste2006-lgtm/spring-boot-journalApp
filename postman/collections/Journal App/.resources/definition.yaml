@@ -1,0 +1,26 @@
+$kind: collection
+name: Journal App
+description: |-
+  # Journal App API
+
+  A RESTful API for a personal journal application built with Spring Boot and MongoDB.
+
+  ## Base URL
+  `http://localhost:8081/journal`
+
+  ## Authentication
+  Most endpoints require a **JWT Bearer Token**. Obtain a token via `POST /public/login` and store it in the `jwt` environment variable.
+
+  Set the `Authorization` header as: `Bearer {{jwt}}`
+
+  ## Folders
+  - **Public** – Open endpoints (health check, sign up, login, greetings)
+  - **Journal Entries** – CRUD operations for journal entries (requires auth)
+  - **User** – User profile management (requires auth)
+  - **Starred Entries** – Manage starred/bookmarked journal entries (requires auth)
+  - **Admin** – Admin-only operations (requires admin role)
+auth:
+  type: bearer
+  credentials:
+    - key: token
+      value: '{{jwt}}'

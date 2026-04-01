@@ -1,0 +1,11 @@
+$kind: http-request
+name: Get Starred Entries
+description: 'Retrieve all starred journal entry IDs for the authenticated user.'
+method: GET
+url: '{{baseUrl}}/star'
+order: 1000
+auth:
+  type: bearer
+  credentials:
+    - key: token
+      value: '{{jwt}}'

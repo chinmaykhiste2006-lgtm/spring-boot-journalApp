@@ -1,0 +1,11 @@
+$kind: http-request
+name: Remove Starred Entry
+description: 'Remove a journal entry from the starred list by its ID.'
+method: DELETE
+url: '{{baseUrl}}/star/delete/id/{{entryId}}'
+order: 3000
+auth:
+  type: bearer
+  credentials:
+    - key: token
+      value: '{{jwt}}'

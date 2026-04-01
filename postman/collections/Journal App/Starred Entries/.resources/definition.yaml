@@ -1,0 +1,3 @@
+$kind: collection
+name: Starred Entries
+description: 'Manage starred (bookmarked) journal entries for the authenticated user. Starred entries are stored as a list of journal entry IDs on the User document.'

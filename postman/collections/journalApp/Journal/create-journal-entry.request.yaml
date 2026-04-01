@@ -1,0 +1,21 @@
+$kind: http-request
+name: Create Journal Entry
+description: 'Create a new journal entry for the authenticated user. Returns 400 if sentiment analysis is not enabled.'
+method: POST
+url: '{{baseUrl}}/journal'
+order: 2000
+auth:
+  type: bearer
+  credentials:
+    - key: token
+      value: '{{jwt}}'
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: |-
+    {
+      "title": "My First Entry",
+      "content": "Today was a great day!"
+    }

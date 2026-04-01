@@ -1,0 +1,11 @@
+$kind: http-request
+name: Delete User
+description: 'Delete the authenticated user''s account along with all their journal entries.'
+method: DELETE
+url: '{{baseUrl}}/user'
+order: 2000
+auth:
+  type: bearer
+  credentials:
+    - key: token
+      value: '{{jwt}}'
