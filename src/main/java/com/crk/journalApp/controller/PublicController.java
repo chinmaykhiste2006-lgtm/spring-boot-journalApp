@@ -54,19 +54,6 @@ public class PublicController {
         return "ok";
     }
 
-    @GetMapping("/greetings")
-    public ResponseEntity<String> greetings(String city) {
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        String userName = authentication.getName();
-        try {
-            String greeting = "Welcome " + userName + " Weather feels like "
-                    + weatherService.getWeather("Pandharpur").getCurrent().getTemperature();
-            return new ResponseEntity<>(greeting, HttpStatus.OK);
-        } catch (Exception e) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
-
-    }
 
     @PostMapping("/signup")
     public User signUp(@RequestBody User user) {
