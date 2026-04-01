@@ -58,6 +58,12 @@ Authorization: Bearer <your_token>
 
 ## 📌 API Endpoints
 
+### Google OAuth API
+
+| Method | Endpoint                | Description           |
+| ------ | ----------------------  | --------------------- |
+| GET    | `/auth/google/callback` | Google OAuth          |
+
 ### 🟢 Public APIs
 
 | Method | Endpoint               | Description           |
