@@ -5,6 +5,15 @@ spring:
       database: journalApp
       auto-index-creation: true
 
+  security:
+    oauth2:
+      client:
+        regestration:
+          google:
+            client-id: 
+            client-secret: 
+
+
 server:
   port: 8081
   servlet:
