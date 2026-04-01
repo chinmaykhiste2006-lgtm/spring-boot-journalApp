@@ -65,7 +65,6 @@ Authorization: Bearer <your_token>
 | GET    | `/public/health-check` | Check server          |
 | POST   | `/public/signup`       | Register user         |
 | POST   | `/public/login`        | Login & get JWT       |
-| GET    | `/public/greetings`    | Greeting with weather |
 
 ---
 
