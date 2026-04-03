@@ -45,10 +45,10 @@ public class GoogleAuthController{
     @Autowired
     private UserDetailsServiceImpl userDetailsService;
 
-    @value("${spring.security.oauth2.client.regestration.google.client-id}")
+    @Value("${spring.security.oauth2.client.regestration.google.client-id}")
     private String clientId;
 
-    @value("${spring.security.oauth2.client.regestration.google.client-secret}")
+    @Value("${spring.security.oauth2.client.regestration.google.client-secret}")
     private String clientSecret;
 
 @GetMapping("/callback")
@@ -84,7 +84,7 @@ if(userInfoResponse.getStatusCode() == HttpStatus.OK){
 
      if(user == null){
 
-        User user = new User;
+        User user = new User();
         user.setEmail(email);
         user.setUsername(username);
         userService.saveUser(user);
