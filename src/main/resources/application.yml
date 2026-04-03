@@ -1,9 +1,11 @@
 spring: 
   data:
     mongodb:
-      uri: ${MONGO_URI}
-      database: journalApp
+      uri: 
+      database: 
       auto-index-creation: true
+
+
 
   security:
     oauth2:
@@ -11,7 +13,7 @@ spring:
         regestration:
           google:
             client-id: 
-            client-secret: 
+            client-secret:
 
 
 server:
@@ -22,8 +24,8 @@ server:
   mail:
     host: smtp.gmail.com
     port: 587
-    username: chinmaykhiste2006@gmail.com
-    password: ${mail_password}
+    username: 
+    password: 
     properties:
       mail:
         smtp:
@@ -36,11 +38,11 @@ server:
       host: 
       port: 12345
       username: default
-      password: yourpassword
+      password: 
       ssl: true
 
-  weather:
+weather:
     api:
-      key: ${weather_api_key} 
+      key: 
 
   

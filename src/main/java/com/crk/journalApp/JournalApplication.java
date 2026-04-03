@@ -9,6 +9,9 @@ import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.data.mongodb.MongoTransactionManager;
 import org.springframework.web.client.RestTemplate;
 
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.JavaMailSenderImpl;
+
 import com.crk.journalApp.service.UserDetailsServiceImpl;
 
 @SpringBootApplication
@@ -27,6 +30,11 @@ public class JournalApplication {
 	@Bean
 	public RestTemplate restTemplate() {
 		return new RestTemplate();
+	}
+
+	@Bean
+	public JavaMailSender javaMailSender() {
+		return new JavaMailSenderImpl();
 	}
 
 }

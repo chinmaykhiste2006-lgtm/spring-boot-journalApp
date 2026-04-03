@@ -1,6 +1,6 @@
 package com.crk.journalApp.filter;
 
-import com.crk.journalApp.utilis.JwtUtil;
+import com.crk.journalApp.utils.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;

@@ -1,14 +1,19 @@
 package com.crk.journalApp.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.RestController;
+import com.crk.journalApp.filter.JwtFilter;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.beans.factory.annotation.Value;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -68,12 +73,12 @@ params.put("grant_type", "authorization_code");
 HttpHeaders headers = new HttpHeaders();
 headers.setContentType(MediaType.APPLICATION_FORM_URLENCODED);
 
-HttpEntity<Map<String, String>> equest = new HttpEntity<>(params, headers);
+HttpEntity<Map<String, String>> request = new HttpEntity<>(params, headers);
 
 ResponseEntity<Map> tokenResponse = restTemplate.postForEntity(tokenEndpoint, request, Map.class);
 String idToken = (String) tokenResponse.getBody().get("id_token");
 String userInfoUrl = "https://oauth2.googleapis.com/tokeninfo?id_token=" + idToken;
-ResponseEntity<Map> userInfoResponse = restTemplate.postForEntity(userInfoUrl, Map.class);
+ResponseEntity<Map> userInfoResponse = restTemplate.getForEntity(userInfoUrl, Map.class);
 
 if(userInfoResponse.getStatusCode() == HttpStatus.OK){
 
@@ -84,16 +89,18 @@ if(userInfoResponse.getStatusCode() == HttpStatus.OK){
 
      if(user == null){
 
-        User user = new User();
+        user = new User();
         user.setEmail(email);
         user.setUsername(username);
+        user.setPassword(passwordEncoder.encode("default"));
         userService.saveUser(user);
-        userDetails = userDetailsService.loadUserByUsername(userame);
+      
 
      }
+     UserDetails userDetails = userDetailsService.loadUserByUsername(username);
      UsernamePasswordAuthenticationToken authentication = 
      new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
-     SecurityContextHolder.getContext.setAuthentication(authentication);
+     SecurityContextHolder.getContext().setAuthentication(authentication);
 
      return ResponseEntity.status(HttpStatus.OK).build();
 
