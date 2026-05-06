@@ -1,4 +1,0 @@
-$kind: collection
-name: Public
-description: 'Public endpoints — no authentication required. Includes health check, user registration, login, and greetings.'
-order: 1000

@@ -1,3 +1,0 @@
-$kind: collection
-name: Admin
-description: 'Admin-only endpoints. Requires JWT authentication with the ROLE_ADMIN authority. These endpoints are protected by Spring Security role-based access control.'

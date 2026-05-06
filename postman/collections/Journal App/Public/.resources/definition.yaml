@@ -1,5 +1,0 @@
-$kind: collection
-name: Public
-description: 'Public endpoints that do not require authentication, except /greetings which uses the security context.'
-auth:
-  type: noauth

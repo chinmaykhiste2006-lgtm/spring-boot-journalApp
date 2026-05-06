@@ -1,3 +1,0 @@
-$kind: collection
-name: User
-description: 'User profile management endpoints. All endpoints require JWT authentication. Operations are performed on the currently authenticated user.'

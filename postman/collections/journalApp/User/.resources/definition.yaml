@@ -1,4 +1,0 @@
-$kind: collection
-name: User
-description: 'User profile management endpoints. All requests require a valid JWT Bearer token.'
-order: 3000

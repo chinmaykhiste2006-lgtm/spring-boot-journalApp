@@ -1,4 +1,0 @@
-$kind: collection
-name: Starred Entries
-description: 'Starred journal entry management endpoints. All requests require a valid JWT Bearer token.'
-order: 5000

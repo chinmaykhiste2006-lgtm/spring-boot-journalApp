@@ -1,6 +1,0 @@
-$kind: http-request
-name: Health Check
-description: 'Check if the server is up and running. Returns ''ok'' if healthy.'
-method: GET
-url: '{{baseUrl}}/public/health-check'
-order: 1000

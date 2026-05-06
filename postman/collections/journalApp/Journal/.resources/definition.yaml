@@ -1,4 +1,0 @@
-$kind: collection
-name: Journal
-description: 'Journal entry management endpoints. All requests require a valid JWT Bearer token.'
-order: 2000
